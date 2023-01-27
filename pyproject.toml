@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cf-mnet-server"
-version = "0.1.0"
+version = "0.1.1"
 description = "A simple SSL server for Cloudflare ZTA Managed Networks"
 authors = ["Route 1337 LLC <@route1337>"]
 license = "MIT"
