@@ -17,9 +17,9 @@ for the SSL `server.crt` and `server.key` files, but otherwise you can ignore Do
 
 Cloudflare Requirements
 -----------------------
-According to Cloudflare the following constraints are in place;
+According to Cloudflare the following constraints are in place:
 
-1. The WARP client requires certificates to include `CN` and `subjectAltName` metadata. You can use `example.com` **or any other domain**.
+1. "The WARP client requires certificates to include `CN` and `subjectAltName` metadata. You can use `example.com` **or any other domain**."
    1. For security reasons, we recommend domains that you actually control despite this server serving a dummy page.
 
 Web Page
