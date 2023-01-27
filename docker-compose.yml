@@ -1,0 +1,21 @@
+#
+# Copyright 2023, Route 1337 LLC, All Rights Reserved.
+#
+# Maintainers:
+# - Matthew Ahrenstein: @ahrenstein
+#
+# See LICENSE
+
+version: '2'
+services:
+  cloudflare-mnet-server:
+    container_name: cloudflare-mnet-server
+    image: localhost/debug:test
+    build: .
+    environment:
+      NETWORK_NAME: Test Network
+    expose:
+      - 443
+    ports:
+      - 8443:443
+    restart: always

@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "cf-mnet-server"
+version = "0.1.0"
+description = "A simple SSL server for Cloudflare ZTA Managed Networks"
+authors = ["Route 1337 LLC <@route1337>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "cf_mnet_server"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pylint = "^2.15.10"
+flask = "^2.2.2"
+pyopenssl = "^23.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
