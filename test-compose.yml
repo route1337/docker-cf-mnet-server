@@ -10,11 +10,9 @@ version: '2'
 services:
   cloudflare-mnet-server:
     container_name: cloudflare-mnet-server
-    image: route1337/cloudflare-mnet-server:latest
-    environment:
-      NETWORK_NAME: Some Network Name
+    image: localhost/cloudflare-mnet-server:test
     volumes:
-      - ./data/cert:/cert
+      - ./test-config:/cert
     ports:
       - 8443:8443
     restart: always

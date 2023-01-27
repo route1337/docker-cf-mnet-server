@@ -21,7 +21,7 @@ Local Docker
 ------------
 You can run Docker using locally built containers via
 
-    docker-compose up -d
+    docker-compose -f test-compose.yml up -d
 
 poetry
 ------

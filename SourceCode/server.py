@@ -65,7 +65,7 @@ def main(use_existing_cert: bool):
     flask_context = SSL.Context(ssl.PROTOCOL_TLSv1_2)
     flask_context.use_privatekey_file('/cert/server.key')
     flask_context.use_certificate_file('/cert/server.crt')
-    flask_app.run(host='0.0.0.0', port=8080,
+    flask_app.run(host='0.0.0.0', port=8443,
                   debug=False, ssl_context=('/cert/server.crt', '/cert/server.key'))
 
 

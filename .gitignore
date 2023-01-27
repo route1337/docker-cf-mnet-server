@@ -251,3 +251,5 @@ pkg/
 pyenv/
 venv/
 __pycache__/
+
+test-config/
