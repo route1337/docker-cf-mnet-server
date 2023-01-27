@@ -36,7 +36,7 @@ def server_index():
     with open('/cert/server.crt', encoding='utf-8') as cert_file:
         server_cert = OpenSSL.crypto.load_certificate(
             OpenSSL.crypto.FILETYPE_PEM, cert_file.read())
-    cert_digest = server_cert.digest("sha256").decode("utf-8")
+    cert_digest = server_cert.digest("sha256").decode("utf-8").replace(":", "")
     server_output = "<h1>Cloudflare Zero Trust Managed Network Server</h1><br/>" \
                     f"<b>Server Name:</b> {server_name}<br/>" \
                     f"<b>TLS Cert SHA-256:</b> {cert_digest}"
