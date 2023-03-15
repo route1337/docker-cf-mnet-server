@@ -10,7 +10,7 @@ version: '2'
 services:
   cloudflare-mnet-server:
     container_name: cloudflare-mnet-server
-    image: route1337/cloudflare-mnet-server:latest
+    image: ghcr.io/route1337/cloudflare-mnet-server:latest
     environment:
       NETWORK_NAME: Some Network Name
     volumes:

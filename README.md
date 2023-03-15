@@ -3,6 +3,11 @@ Cloudflare Zero Trust Access Managed Network Server
 This is a simple docker container that allows you to run a [Cloudflare managed network location](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/configure-warp/managed-networks)
 with ease. Deploy it on any network where you intend to take advantage of Cloudflare WARP client settings based on network location.
 
+Docker -> GHCR
+--------------
+Route 1337 LLC is moving to ghcr.io and away from Docker Hub.  
+This does mean that anything in the `route1337` namespace on Docker Hub should no longer be trusted, as it could be run by an attacker paying for the namespace.
+
 Running The Server
 ---------------
 You can either mount your own volume containing the SSL cert and key, or let the container generate its own.  

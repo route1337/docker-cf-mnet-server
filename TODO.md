@@ -2,7 +2,7 @@ Cloudflare Zero Trust Access Managed Network Server: To Do List
 ===============================================================
 The versions below are future versions that will be released once those features have been completed.
 
-Version 0.2.0
+Version 1.1.0
 -------------
 
 1. Swap Flask out for a production WSGI server with SSL support. [gevent.pywsgi]() is an option.

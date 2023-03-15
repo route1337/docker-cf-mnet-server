@@ -22,5 +22,5 @@ jobs:
       - name: Build the Docker image
         run: |
           echo "Building container..."
-          docker build -f Dockerfile -t route1337/cloudflare-mnet-server:test-build .
+          docker build -f Dockerfile -t ghcr.io/route1337/cloudflare-mnet-server:test-build .
           echo "Done!"
