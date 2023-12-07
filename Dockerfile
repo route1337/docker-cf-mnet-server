@@ -7,18 +7,16 @@
 # See LICENSE
 #
 
-FROM python:3.10
+FROM python:3.11
 LABEL maintainer = "Route 1337 LLC <@route1337>"
-
-# Copy the source code and poetry config to /app
-COPY ./SourceCode/ /app
-COPY pyproject.toml /app/
 
 # Install some required packages
 RUN apt-get update && apt-get install -y openssl
 RUN mkdir /cert
 
 # Configure the Python environment using poetry
+COPY pyproject.toml /app/
+COPY poetry.lock /app/
 WORKDIR /app
 ENV PYTHONPATH=${PYTHONPATH}:${PWD}
 RUN pip3 install poetry
@@ -27,6 +25,9 @@ RUN poetry install --no-dev --no-root
 
 # Make sure logging to stdout works
 ENV PYTHONUNBUFFERED=0
+
+# Deploy the app
+COPY ./SourceCode/* /app/
 
 # Run the Flask server
 CMD ["python", "-u", "/app/server.py"]
