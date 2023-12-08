@@ -15,10 +15,10 @@
 
 import logging
 import os
-import ssl
 import OpenSSL.crypto
 from flask import Flask
-from OpenSSL import SSL
+from cheroot.wsgi import Server as WSGIServer
+from cheroot.ssl.builtin import BuiltinSSLAdapter
 import generate
 
 
@@ -61,12 +61,17 @@ def main(use_existing_cert: bool):
                         " it's possible the generated cert will be lost!")
         generate.generate_cert(os.uname()[1])
 
-    # Configure Flask to use OpenSSL with TLS 1.2 on 0.0.0.0:443
-    flask_context = SSL.Context(ssl.PROTOCOL_TLSv1_2)
-    flask_context.use_privatekey_file('/cert/server.key')
-    flask_context.use_certificate_file('/cert/server.crt')
-    flask_app.run(host='0.0.0.0', port=8443,
-                  debug=False, ssl_context=('/cert/server.crt', '/cert/server.key'))
+    # Configure SSL
+    ssl_config = BuiltinSSLAdapter(certificate='/cert/server.crt', private_key='/cert/server.key',
+                                   certificate_chain=None)
+    # Configure CherryPy on 0.0.0.0:8443
+    server = WSGIServer(
+        ('0.0.0.0', 8443), flask_app,
+        server_name=os.getenv("NETWORK_NAME", default="ZTA-" + os.uname()[1]))
+    # Configure CherryPy to use SSL
+    server.ssl_adapter = ssl_config
+    logging.info("Starting the server")
+    server.start()
 
 
 if __name__ == '__main__':
