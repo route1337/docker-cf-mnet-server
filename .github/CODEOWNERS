@@ -2,4 +2,4 @@
 
 # Catch all for unspecified items
 # This is listed first as CODEOWNERS is chained bottom to top
-* @route1337/bot-wranglers
+* @route1337/core-infra

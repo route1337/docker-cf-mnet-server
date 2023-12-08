@@ -2,6 +2,13 @@ Cloudflare Zero Trust Access Managed Network Server: Changelog
 ==============================================================
 A list of all the changes made to this repo, and the container service it contains
 
+Version 1.1.0
+-------------
+
+1. Updating Python to 3.11
+2. Moving from Flash to CherryPy for Webserver
+3. ARM Container support
+
 Version 1.0.0
 -------------
 
