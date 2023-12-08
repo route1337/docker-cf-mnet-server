@@ -11,9 +11,8 @@ services:
   cloudflare-mnet-server:
     container_name: cloudflare-mnet-server
     image: localhost/cloudflare-mnet-server:test
-    build: .
     volumes:
       - ./test-config:/cert
     ports:
-      - "8443:8443"
+      - 8443:8443
     restart: always
