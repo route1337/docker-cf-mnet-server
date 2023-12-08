@@ -16,7 +16,6 @@ RUN mkdir /cert
 
 # Configure the Python environment using poetry
 COPY pyproject.toml /app/
-COPY poetry.lock /app/
 WORKDIR /app
 ENV PYTHONPATH=${PYTHONPATH}:${PWD}
 RUN pip3 install poetry
