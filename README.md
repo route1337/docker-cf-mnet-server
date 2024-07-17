@@ -13,7 +13,7 @@ Running The Server
 You can either mount your own volume containing the SSL cert and key, or let the container generate its own.  
 Mounting your own is the recommended course of action as you should always use your own certs.
 
-**WARNING:** Not using a volume mount, means the cert could change on you when the container is moved within a K8s cluster.
+We offer a helm chart called `cloudflare-mnet` in our public [helm charts](https://helm-charts.route1337.com/) repo.
 
 Running Without Docker
 ----------------------
