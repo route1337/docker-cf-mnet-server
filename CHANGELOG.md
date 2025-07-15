@@ -2,6 +2,11 @@ Cloudflare Zero Trust Access Managed Network Server: Changelog
 ==============================================================
 A list of all the changes made to this repo, and the container service it contains
 
+Version 1.1.2
+-------------
+
+1. Minor security fixes reported by dependabot.
+
 Version 1.1.1
 -------------
 
