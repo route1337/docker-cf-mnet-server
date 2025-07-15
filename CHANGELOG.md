@@ -6,6 +6,7 @@ Version 1.1.2
 -------------
 
 1. Minor security fixes reported by dependabot.
+2. Bump Python version from `3.10` to `3.12`
 
 Version 1.1.1
 -------------
