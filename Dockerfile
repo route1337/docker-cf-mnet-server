@@ -7,7 +7,7 @@
 # See LICENSE
 #
 
-FROM python:3.10
+FROM python:3.12
 LABEL maintainer = "Route 1337 LLC <@route1337>"
 
 # Copy the source code and poetry config to /app
@@ -23,7 +23,7 @@ WORKDIR /app
 ENV PYTHONPATH=${PYTHONPATH}:${PWD}
 RUN pip3 install poetry
 RUN poetry config virtualenvs.create false
-RUN poetry install --no-dev --no-root
+RUN poetry install --no-root
 
 # Make sure logging to stdout works
 ENV PYTHONUNBUFFERED=0
