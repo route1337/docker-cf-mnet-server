@@ -6,7 +6,6 @@
 #
 # See LICENSE
 
-version: '2'
 services:
   cloudflare-mnet-server:
     container_name: cloudflare-mnet-server
